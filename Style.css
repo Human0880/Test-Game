@@ -19,8 +19,13 @@ body {
     height: auto;
 }
 
-.balance, .timer {
-    font-size: 1.5em;
+.balance {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+.timer {
+    font-size: 2.5em;
     margin: 10px 0;
 }
 
