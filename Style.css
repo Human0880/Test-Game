@@ -16,35 +16,31 @@ body {
 }
 
 .logo {
-    width: 100%;
-    max-width: 300px;
+    width: 100%; /* Логотип на всю ширину контейнера */
+    max-width: 300px; /* Максимальна ширина логотипу */
     height: auto;
     position: absolute;
-    top: 10px; /* Від краю 10px */
+    top: 110px; /* Від краю 110px */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
-}
-
-.level, .balance, .timer {
-    font-size: 40pt; /* Розмір шрифту для лвл і балансу */
-    color: #C7C7C7;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо */
-}
-
-.level {
-    top: 40px; /* Відстань між логотипом та лвл 15px */
 }
 
 .balance {
-    top: 55px; /* Відстань між лвл та балансом 15px */
+    font-size: 40pt; /* Розмір шрифту для балансу */
+    color: #C7C7C7;
+    position: absolute;
+    top: 339px; /* Відстань від верхнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
 
 .timer {
-    font-size: 20pt; /* Розмір шрифту для таймера */
+    font-size: 100pt; /* Розмір шрифту для таймера */
     color: #ADB4CC;
-    top: 70px; /* Відстань між балансом та таймером 15px */
+    position: absolute;
+    top: 388px; /* Відстань від верхнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
 
 .buttons {
@@ -69,14 +65,11 @@ body {
     height: 45px; /* Встановлено фіксовану висоту для кнопок */
 }
 
-.btn:last-child img {
-    width: 200px; /* Кнопка Buy більша */
-    height: 60px;
-}
-
 #boostButton {
     position: absolute;
     bottom: 20px; /* Відстань від нижнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
+    width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
+    height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
 }
