@@ -46,4 +46,5 @@ function resetFarming() {
 
 function buyBoost() {
     // Логіка для покупки бустів (поки не реалізована)
+    alert("Буст куплено!");
 }
