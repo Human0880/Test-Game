@@ -3,14 +3,14 @@ let farmingActive = false;
 let farmingInterval;
 let timer = 30; // Таймер на 30 секунд
 let farmRate = 100; // Базова ставка фарму
-let playerLevel = 1; // Рівень гравця
+let boostLevel = 1; // Рівень бусту
 let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
 let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
 
 function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
-        document.getElementById("farmButton").style.opacity = 0.5; // Вимкнути кнопку
+        document.getElementById("farmButton").disabled = true;
         document.getElementById("claimButton").disabled = true;
 
         // Встановлюємо інтервал для відліку часу
@@ -21,7 +21,7 @@ function startFarming() {
             } else {
                 clearInterval(farmingInterval);
                 farmingActive = false;
-                document.getElementById("farmButton").style.opacity = 1; // Увімкнути кнопку
+                document.getElementById("farmButton").disabled = false;
                 document.getElementById("claimButton").disabled = false;
             }
         }, 1000);
@@ -49,13 +49,11 @@ function resetFarming() {
 }
 
 function buyBoost() {
-    if (playerLevel <= 10 && balance >= boostCost[playerLevel - 1]) {
-        balance -= boostCost[playerLevel - 1];
-        farmRate += boostAmount[playerLevel - 1];
-        playerLevel++; // Збільшуємо рівень гравця
+    if (boostLevel <= 10 && balance >= boostCost[boostLevel - 1]) {
+        balance -= boostCost[boostLevel - 1];
+        farmRate += boostAmount[boostLevel - 1];
+        boostLevel++;
         document.getElementById("balance").innerText = balance;
-        document.getElementById("playerLevel").innerText = playerLevel; // Оновлюємо LVL
-    } else {
-        alert("Ви досягли максимального рівня або недостатньо грошей!");
+        document.getElementById("level").innerText = boostLevel; // Оновлення LVL
     }
 }
