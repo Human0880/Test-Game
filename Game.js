@@ -1,9 +1,11 @@
 let balance = 5000; // Стартовий баланс
-let level = 1; // Початковий рівень
 let farmingActive = false;
 let farmingInterval;
-let timer = 20; // Таймер на 20 секунд
+let timer = 60; // Таймер на 1 хвилину
 let farmRate = 100; // Базова ставка фарму
+let boostLevel = 0; // Рівень бусту
+let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
+let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
 
 function startFarming() {
     if (!farmingActive) {
@@ -33,27 +35,30 @@ function updateTimerDisplay() {
 
 function claimReward() {
     if (timer === 0) {
-        balance += farmRate;
+        balance += farmRate + boostAmount[boostLevel]; // Додаємо MX до балансу з урахуванням рівня бусту
         document.getElementById("balance").innerText = balance;
-
-        // Збільшуємо рівень, якщо баланс перевищує 10000
-        if (balance >= 10000) {
-            level++;
-            document.getElementById("level").innerText = `LVL: ${level}`;
-            balance = 5000; // Скидаємо баланс після підвищення рівня
-        }
-
         resetFarming();
     }
 }
 
 function resetFarming() {
-    timer = 20; // Повертаємо таймер до 20 секунд
+    timer = 60; // Повертаємо таймер до 1 хвилини
     updateTimerDisplay();
-    document.getElementById("claimButton").disabled = true;
+    document.getElementById("claimButton").disabled = true; // Вимикаємо кнопку "Claim"
 }
 
 function buyBoost() {
-    // Логіка для покупки бустів (поки не реалізована)
-    alert("Буст куплено!");
+    // Перевіряємо, чи достатньо балансу для покупки
+    if (boostLevel < boostCost.length && balance >= boostCost[boostLevel]) {
+        balance -= boostCost[boostLevel]; // Витрачаємо баланс на буст
+        boostLevel++; // Підвищуємо рівень бусту
+        document.getElementById("level").innerText = `LVL: ${boostLevel}`; // Оновлюємо відображення рівня
+        document.getElementById("balance").innerText = balance; // Оновлюємо баланс
+
+        alert("Буст куплено!"); // Повідомлення про успішну покупку
+    } else if (boostLevel >= boostCost.length) {
+        alert("Ви досягли максимального рівня бусту!"); // Повідомлення про максимальний рівень
+    } else {
+        alert("Недостатньо MX для покупки бусту."); // Повідомлення про недостатній баланс
+    }
 }
