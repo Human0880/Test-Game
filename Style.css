@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #EBECF0;
+    color: #C7C7C7;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -8,59 +8,76 @@ body {
 }
 
 .container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
+    position: relative;
+    width: 390px; /* Встановлюємо ширину контейнера */
+    height: 844px; /* Встановлюємо висоту контейнера */
+    margin: auto; /* Центруємо контейнер на сторінці */
 }
 
 .logo {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    position: absolute;
+    top: 110px; /* Висота від верхньої частини */
+    left: 50%; /* Вирівнюємо по центру */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    width: 298px; /* Ширина логотипу */
+    height: auto; /* Автоматична висота для збереження пропорцій */
 }
 
 .balance {
-    font-size: 1.8em;
-    margin: 10px 0;
+    position: absolute;
+    top: 339px; /* Висота балансу */
+    left: 50%; /* Вирівнюємо по центру */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    font-size: 40pt; /* Розмір шрифту */
+    color: #C7C7C7; /* Колір */
+    white-space: nowrap; /* Забороняємо перенос рядка */
 }
 
 .timer {
-    font-size: 2.5em;
-    margin: 10px 0;
+    position: absolute;
+    top: 388px; /* Висота таймера */
+    left: 50%; /* Вирівнюємо по центру */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    font-size: 100pt; /* Розмір шрифту */
+    color: #ADB4CC; /* Колір */
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    position: absolute;
+    top: 564px; /* Висота кнопок Farm і Claim */
+    left: 50%; /* Вирівнюємо по центру */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    display: flex; /* Використовуємо Flexbox для кнопок */
+    justify-content: space-between; /* Вирівнюємо кнопки по краях */
+    width: 90%; /* Зменшуємо ширину для забезпечення простору */
 }
 
 .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-    margin: 0 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border: none; /* Без рамки */
+    cursor: pointer; /* Змінюємо курсор при наведенні */
+    background-repeat: no-repeat; /* Запобігаємо повторенню фону */
+    background-size: contain; /* Змінено для коректного відображення */
+    background-color: transparent; /* Задаємо прозорий фон для кнопок */
 }
 
-.btn.green {
-    background-color: green;
-    color: white;
+.btn.farm {
+    background-image: url('Farm.png'); /* Ім'я файлу кнопки Farm */
+    width: 150px; /* Ширина кнопки */
+    height: 45px; /* Висота кнопки */
 }
 
-.btn.gray {
-    background-color: gray;
-    color: white;
+.btn.claim {
+    background-image: url('Claim.png'); /* Ім'я файлу кнопки Claim */
+    width: 150px; /* Ширина кнопки */
+    height: 45px; /* Висота кнопки */
 }
 
-.btn.boost {
-    background-color: orange;
-    color: white;
-    margin-top: 20px;
-}
-
-.boost-info {
-    margin-top: 20px;
-    font-size: 1.2em;
+.btn.buy {
+    position: absolute;
+    top: 630px; /* Висота кнопки Buy під кнопками Farm та Claim */
+    left: 50%; /* Вирівнюємо по центру */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    background-image: url('Buy.png'); /* Ім'я файлу кнопки Buy */
+    width: 200px; /* Ширина кнопки */
+    height: 60px; /* Висота кнопки */
 }
