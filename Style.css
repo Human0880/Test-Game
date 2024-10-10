@@ -19,17 +19,14 @@ body {
     width: 100%;
     max-width: 300px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.level {
-    font-size: 1.5em;
+.level, .balance, .timer {
+    font-size: 40pt; /* Розмір шрифту для LVL і балансу */
+    color: #C7C7C7; /* Колір для LVL і балансу */
     margin: 10px 0;
-    color: #C7C7C7;
-}
-
-.balance {
-    font-size: 40pt; /* Розмір шрифту для балансу */
-    color: #C7C7C7; /* Колір балансу */
 }
 
 .timer {
@@ -45,4 +42,12 @@ body {
 
 .btn {
     cursor: pointer;
+    margin: 0 5px; /* Відстань між кнопками */
+}
+
+#boostButton {
+    display: block;
+    margin: 20px auto; /* Центрування кнопки Buy */
+    width: 200px;
+    height: 60px;
 }
