@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <img src="logo.png" alt="Логотип" class="logo">
+        <div class="level">LVL: <span id="level">1</span></div>
         <div class="balance"> <span id="balance">5000</span> MN</div>
         <div class="timer"> <span id="timer">00:20</span></div>
-        <div class="level">LVL: <span id="level">1</span></div>
         <div class="buttons">
             <button id="farmButton" class="btn" onclick="startFarming()">
                 <img src="Farm.png" alt="Farm">
@@ -19,10 +19,10 @@
             <button id="claimButton" class="btn" onclick="claimReward()" disabled>
                 <img src="Claim.png" alt="Claim">
             </button>
-            <button id="boostButton" class="btn" onclick="buyBoost()">
-                <img src="Buy.png" alt="Buy">
-            </button>
         </div>
+        <button id="boostButton" class="btn" onclick="buyBoost()">
+            <img src="Buy.png" alt="Buy">
+        </button>
     </div>
     <script src="game.js"></script>
 </body>
