@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <img src="logo.png" alt="Game Logo" class="logo">
-        <div id="balance">Баланс: 5000 монет</div>
-        <div id="timer">01:00</div>
-        <div class="button-container">
-            <button id="farmButton">Farm</button>
-            <button id="claimButton" class="disabled">Claim</button>
+    <div class="container">
+        <img src="logo.png" alt="Логотип" class="logo">
+        <div class="balance">Баланс: <span id="balance">5000</span> MN</div>
+        <div class="timer">Таймер: <span id="timer">60</span> сек</div>
+        <div class="buttons">
+            <button id="farmButton" class="btn green" onclick="startFarming()">Farm</button>
+            <button id="claimButton" class="btn gray" onclick="claimReward()" disabled>Claim</button>
         </div>
-        <button id="boostButton">Купити Буст</button>
-        <div id="boostInfo">Буст: 0 (Ціна: 500 монет)</div>
-        <div id="levelInfo">Рівень: 1 (+100 монет/хв, Ціна: 500 монет)</div>
+        <div class="boost-info" id="boostInfo">
+            <h3>Boost Level: <span id="boostLevel">1</span></h3>
+            <h4>Наступний рівень:</h4>
+            <ul id="boostDetails">
+                <li>Рівень 1: +100 до фарму за 500 монет</li>
+                <li>Рівень 2: +300 до фарму за 1000 монет</li>
+                <li>Рівень 3: +1000 до фарму за 1500 монет</li>
+                <li>Рівень 4: +5000 до фарму за 6000 монет</li>
+                <li>Рівень 5: +10000 до фарму за 10000 монет</li>
+                <li>Рівень 6: +20000 до фарму за 20000 монет</li>
+                <li>Рівень 7: +50000 до фарму за 50000 монет</li>
+                <li>Рівень 8: +100000 до фарму за 100000 монет</li>
+                <li>Рівень 9: +200000 до фарму за 200000 монет</li>
+                <li>Рівень 10: +500000 до фарму за 500000 монет</li>
+            </ul>
+        </div>
+        <button id="boostButton" class="btn boost" onclick="buyBoost()">Boost</button>
     </div>
-
     <script src="game.js"></script>
 </body>
 </html>
