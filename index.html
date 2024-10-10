@@ -9,17 +9,13 @@
 <body>
     <div class="container">
         <img src="logo.png" alt="Логотип" class="logo">
-        <div class="balance"> <span id="balance">5000</span> MN</div>
-        <div class="timer"> <span id="timer">00:30</span></div>
+        <div class="balance"><span id="balance">5000</span> MN</div>
+        <div class="timer"><span id="timer">00:30</span></div>
         <div class="buttons">
-            <button id="farmButton" class="btn green" onclick="startFarming()">Farm</button>
-            <button id="claimButton" class="btn gray" onclick="claimReward()" disabled>Claim</button>
+            <button id="farmButton" class="btn farm" onclick="startFarming()"></button>
+            <button id="claimButton" class="btn claim" onclick="claimReward()" disabled></button>
         </div>
-        <div class="boost-info">
-            <h3>Boost Level: <span id="boostLevel">1</span></h3>
-            <p>+<span id="boostAmount">100</span> до фарму за <span id="boostCost">500</span> MN</p>
-        </div>
-        <button id="boostButton" class="btn boost" onclick="buyBoost()">Boost</button>
+        <button id="boostButton" class="btn buy" onclick="buyBoost()"></button>
     </div>
     <script src="game.js"></script>
 </body>
