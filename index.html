@@ -1,23 +1,90 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="level">LVL <span id="level">1</span></div> <!-- Додано рівень -->
-        <img src="logo.png" alt="Логотип" class="logo">
-        <div class="balance"><span id="balance">5000</span> MN</div>
-        <div class="timer"><span id="timer">00:30</span></div>
-        <div class="buttons">
-            <button id="farmButton" class="btn farm" onclick="startFarming()"></button>
-            <button id="claimButton" class="btn claim" onclick="claimReward()" disabled></button>
-        </div>
-        <button id="boostButton" class="btn buy" onclick="buyBoost()"></button>
-    </div>
-    <script src="game.js"></script>
-</body>
-</html>
+let balance = 5000; // Стартовий баланс
+let farmingActive = false; // Стан фармінгу
+let farmingInterval; // Інтервал для фармінгу
+let timer = 30; // Таймер на 30 секунд
+let farmRate = 100; // Базова ставка фарму
+let boostLevel = 1; // Рівень бусту
+let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
+let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
+let level = 1; // Рівень гри
+
+function startFarming() {
+    if (!farmingActive) {
+        farmingActive = true;
+        document.getElementById("farmButton").disabled = true;
+        document.getElementById("farmButton").classList.remove("farm");
+        document.getElementById("farmButton").classList.add("gray");
+
+        document.getElementById("claimButton").disabled = true;
+
+        // Встановлюємо інтервал для відліку часу
+        farmingInterval = setInterval(() => {
+            if (timer > 0) {
+                timer--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(farmingInterval);
+                farmingActive = false;
+                document.getElementById("farmButton").disabled = false;
+                document.getElementById("farmButton").classList.remove("gray");
+                document.getElementById("farmButton").classList.add("farm");
+
+                document.getElementById("claimButton").disabled = false;
+                document.getElementById("claimButton").classList.remove("gray");
+                document.getElementById("claimButton").classList.add("claim");
+            }
+        }, 1000);
+    }
+}
+
+function updateTimerDisplay() {
+    let minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+    let seconds = (timer % 60).toString().padStart(2, '0');
+    document.getElementById("timer").innerText = `${minutes}:${seconds}`;
+}
+
+function claimReward() {
+    if (timer === 0) {
+        balance += farmRate; // Додаємо до балансу
+        document.getElementById("balance").innerText = balance;
+        updateLevel(); // Оновлюємо рівень
+        resetFarming();
+    }
+}
+
+function resetFarming() {
+    timer = 30; // Повертаємо таймер до 30 секунд
+    updateTimerDisplay();
+    document.getElementById("claimButton").disabled = true;
+    document.getElementById("claimButton").classList.remove("claim");
+    document.getElementById("claimButton").classList.add("gray");
+}
+
+function buyBoost() {
+    if (boostLevel <= 10 && balance >= boostCost[boostLevel - 1]) {
+        balance -= boostCost[boostLevel - 1];
+        farmRate += boostAmount[boostLevel - 1];
+        boostLevel++;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("boostLevel").innerText = boostLevel;
+        updateBoostInfo();
+        updateLevel(); // Оновлюємо рівень при купівлі бусту
+    }
+}
+
+function updateBoostInfo() {
+    if (boostLevel <= 10) {
+        document.getElementById("boostAmount").innerText = boostAmount[boostLevel - 1];
+        document.getElementById("boostCost").innerText = boostCost[boostLevel - 1];
+    } else {
+        document.getElementById("boostAmount").innerText = "Максимальний рівень досягнуто!";
+        document.getElementById("boostCost").innerText = "-";
+    }
+}
+
+// Функція для оновлення рівня на екрані
+function updateLevel() {
+    document.getElementById("level").innerText = level; // Оновлює рівень на екрані
+}
+
+// Викликайте updateLevel() в потрібних місцях вашого коду, щоб оновити рівень
