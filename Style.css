@@ -42,12 +42,14 @@ body {
 
 .btn {
     cursor: pointer;
+    width: 150px; /* Ширина кнопок */
+    height: 45px; /* Висота кнопок */
     margin: 0 5px; /* Відстань між кнопками */
 }
 
 #boostButton {
     display: block;
     margin: 20px auto; /* Центрування кнопки Buy */
-    width: 200px;
-    height: 60px;
+    width: 150px; /* Ширина кнопки Buy */
+    height: 45px; /* Висота кнопки Buy */
 }
