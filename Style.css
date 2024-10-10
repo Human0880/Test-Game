@@ -12,18 +12,18 @@ body {
     max-width: 390px;
     height: 844px; /* Висота контейнера */
     margin: auto;
-    padding: 20px 0; /* Відступи зверху та знизу */
+    padding: 10px 0; /* Відступи зверху та знизу */
 }
 
 .logo {
     width: 100%;
     max-width: 300px;
     height: auto;
-    margin-top: 20px; /* Відступ зверху */
+    margin-top: 10px; /* Відступ зверху від краю */
 }
 
 .level, .balance, .timer {
-    margin-top: 50px; /* Відступ між елементами */
+    margin-top: 20px; /* Відступ між елементами */
     font-size: 40pt; /* Розмір шрифту для LVL та балансу */
 }
 
