@@ -1,79 +1,76 @@
-* {
-    box-sizing: border-box; /* Забезпечує, що padding та border враховуються у загальних розмірах */
-}
-
 body {
-    margin: 0; /* Прибираємо відступи */
-    overflow: hidden; /* Прибираємо прокрутку */
+    background-color: #EBECF0;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Заповнити весь екран */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    position: absolute; /* Змінено на absolute для фіксації на екрані */
-    top: 0; /* Від верхньої частини */
-    left: 0; /* Від лівого краю */
-    width: 100vw; /* На всю ширину екрана */
-    height: 100vh; /* На всю висоту екрана */
-    background-color: #EBECF0; /* Колір фону */
-    display: flex; /* Використовуємо flex для центрування елементів */
-    flex-direction: column; /* Вертикальна орієнтація */
-    align-items: center; /* Вирівнюємо по центру */
-    justify-content: center; /* Центруємо вертикально */
-}
-
-.level {
-    font-size: 40pt; /* Розмір шрифту для рівня */
-    color: #C7C7C7; /* Колір тексту */
-    margin-top: 20px; /* Відстань від верхньої частини */
+    max-width: 390px; /* Ширина контейнера */
+    width: 100%; /* Адаптивна ширина */
+    padding: 20px;
 }
 
 .logo {
-    margin-top: 10px; /* Відстань від рівня */
-    width: 298px; /* Ширина логотипу */
+    width: 100%;
+    max-width: 300px;
     height: auto;
 }
 
+.level {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #C7C7C7;
+}
+
 .balance {
-    font-size: 40pt; /* Розмір шрифту */
-    color: #C7C7C7; /* Колір */
-    white-space: nowrap; /* Забороняємо перенос рядка */
+    font-size: 1.8em;
+    margin: 10px 0;
 }
 
 .timer {
-    font-size: 100pt; /* Розмір шрифту */
-    color: #ADB4CC; /* Колір */
+    font-size: 2.5em;
+    margin: 10px 0;
 }
 
 .buttons {
-    display: flex; /* Використовуємо flex для кнопок */
-    justify-content: space-between; /* Вирівнюємо кнопки по краях */
-    width: 100%; /* Займає всю ширину */
-    padding: 0 30px; /* Відступи */
-    margin-top: 20px; /* Відстань від таймера */
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: contain; /* Змінено для коректного відображення */
-    background-color: transparent; /* Задаємо прозорий фон для кнопок */
 }
 
-.btn.farm {
-    background-image: url('Farm.png'); /* Ім'я файлу кнопки Farm */
-    width: 150px; /* Ширина кнопки */
-    height: 45px; /* Висота кнопки */
+.btn.green {
+    background-color: green;
+    color: white;
 }
 
-.btn.claim {
-    background-image: url('Claim.png'); /* Ім'я файлу кнопки Claim */
-    width: 150px; /* Ширина кнопки */
-    height: 45px; /* Висота кнопки */
+.btn.gray {
+    background-color: gray;
+    color: white;
 }
 
-.btn.buy {
-    background-image: url('Buy.png'); /* Ім'я файлу кнопки Buy */
-    width: 200px; /* Ширина кнопки */
-    height: 60px; /* Висота кнопки */
-    margin-top: 20px; /* Відстань від верхніх елементів */
+.btn.boost {
+    background-color: orange;
+    color: white;
+    margin-top: 20px;
+}
+
+.boost-info {
+    margin-top: 20px;
+    font-size: 1.2em;
 }
