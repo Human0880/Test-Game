@@ -1,9 +1,9 @@
 let balance = 5000; // Стартовий баланс
 let farmingActive = false;
 let farmingInterval;
-let timer = 30; // Таймер на 30 секунд
+let timer = 20; // Таймер на 20 секунд
 let farmRate = 100; // Базова ставка фарму
-let boostLevel = 1; // Рівень бусту
+let level = 1; // Рівень
 let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
 let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
 
@@ -11,10 +11,6 @@ function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
         document.getElementById("farmButton").disabled = true;
-        document.getElementById("farmButton").classList.remove("green");
-        document.getElementById("farmButton").classList.add("gray");
-        
-        document.getElementById("claimButton").disabled = true;
 
         // Встановлюємо інтервал для відліку часу
         farmingInterval = setInterval(() => {
@@ -25,12 +21,7 @@ function startFarming() {
                 clearInterval(farmingInterval);
                 farmingActive = false;
                 document.getElementById("farmButton").disabled = false;
-                document.getElementById("farmButton").classList.remove("gray");
-                document.getElementById("farmButton").classList.add("green");
-
                 document.getElementById("claimButton").disabled = false;
-                document.getElementById("claimButton").classList.remove("gray");
-                document.getElementById("claimButton").classList.add("green");
             }
         }, 1000);
     }
@@ -51,30 +42,17 @@ function claimReward() {
 }
 
 function resetFarming() {
-    timer = 30; // Повертаємо таймер до 30 секунд
+    timer = 20; // Повертаємо таймер до 20 секунд
     updateTimerDisplay();
     document.getElementById("claimButton").disabled = true;
-    document.getElementById("claimButton").classList.remove("green");
-    document.getElementById("claimButton").classList.add("gray");
 }
 
 function buyBoost() {
-    if (boostLevel <= 10 && balance >= boostCost[boostLevel - 1]) {
-        balance -= boostCost[boostLevel - 1];
-        farmRate += boostAmount[boostLevel - 1];
-        boostLevel++;
+    if (level <= 10 && balance >= boostCost[level - 1]) {
+        balance -= boostCost[level - 1];
+        farmRate += boostAmount[level - 1];
+        level++;
         document.getElementById("balance").innerText = balance;
-        document.getElementById("lvl").innerText = boostLevel;
-        updateBoostInfo();
-    }
-}
-
-function updateBoostInfo() {
-    if (boostLevel <= 10) {
-        document.getElementById("boostAmount").innerText = boostAmount[boostLevel - 1];
-        document.getElementById("boostCost").innerText = boostCost[boostLevel - 1];
-    } else {
-        document.getElementById("boostAmount").innerText = "Максимальний рівень досягнуто!";
-        document.getElementById("boostCost").innerText = "-";
+        document.getElementById("level").innerText = level;
     }
 }
