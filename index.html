@@ -2,21 +2,21 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=390, height=844, initial-scale=1.0, user-scalable=no"> <!-- Заборона масштабування -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Farm Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <img src="logo.png" alt="Логотип" class="logo">
-        <div class="level">LVL: <span id="level">1</span></div>
         <div class="balance"><span id="balance">5000</span> MX</div>
-        <div class="timer"><span id="timer">00:00</span></div>
+        <div class="timer"><span id="timer">00:30</span></div>
+        <div class="lvl">LVL: <span id="lvl">1</span></div>
         <div class="buttons">
-            <img id="farmButton" class="btn" src="Farm.png" alt="Farm" onclick="startFarming()">
-            <img id="claimButton" class="btn" src="Claim.png" alt="Claim" onclick="claimReward()" disabled>
+            <button id="farmButton" class="btn" onclick="startFarming()">Farm</button>
+            <button id="claimButton" class="btn" onclick="claimReward()" disabled>Claim</button>
+            <button id="boostButton" class="btn" onclick="buyBoost()">Buy</button>
         </div>
-        <img id="boostButton" class="btn" src="Buy.png" alt="Buy" onclick="buyBoost()">
     </div>
     <script src="game.js"></script>
 </body>
