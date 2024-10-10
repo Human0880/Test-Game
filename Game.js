@@ -1,9 +1,9 @@
 let balance = 5000; // Стартовий баланс
 let farmingActive = false;
 let farmingInterval;
-let timer = 60; // Таймер на 1 хвилину
+let timer = 20; // Таймер на 20 секунд
 let farmRate = 100; // Базова ставка фарму
-let boostLevel = 0; // Рівень бусту
+let level = 1; // Рівень
 let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
 let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
 
@@ -35,30 +35,24 @@ function updateTimerDisplay() {
 
 function claimReward() {
     if (timer === 0) {
-        balance += farmRate + boostAmount[boostLevel]; // Додаємо MX до балансу з урахуванням рівня бусту
+        balance += farmRate;
         document.getElementById("balance").innerText = balance;
         resetFarming();
     }
 }
 
 function resetFarming() {
-    timer = 60; // Повертаємо таймер до 1 хвилини
+    timer = 20; // Повертаємо таймер до 20 секунд
     updateTimerDisplay();
-    document.getElementById("claimButton").disabled = true; // Вимикаємо кнопку "Claim"
+    document.getElementById("claimButton").disabled = true;
 }
 
 function buyBoost() {
-    // Перевіряємо, чи достатньо балансу для покупки
-    if (boostLevel < boostCost.length && balance >= boostCost[boostLevel]) {
-        balance -= boostCost[boostLevel]; // Витрачаємо баланс на буст
-        boostLevel++; // Підвищуємо рівень бусту
-        document.getElementById("level").innerText = `LVL: ${boostLevel}`; // Оновлюємо відображення рівня
-        document.getElementById("balance").innerText = balance; // Оновлюємо баланс
-
-        alert("Буст куплено!"); // Повідомлення про успішну покупку
-    } else if (boostLevel >= boostCost.length) {
-        alert("Ви досягли максимального рівня бусту!"); // Повідомлення про максимальний рівень
-    } else {
-        alert("Недостатньо MX для покупки бусту."); // Повідомлення про недостатній баланс
+    if (level <= 10 && balance >= boostCost[level - 1]) {
+        balance -= boostCost[level - 1];
+        farmRate += boostAmount[level - 1];
+        level++;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("level").innerText = level;
     }
 }
