@@ -53,6 +53,6 @@ function buyBoost() {
         farmRate += boostAmount[level - 1];
         level++;
         document.getElementById("balance").innerText = balance;
-        document.getElementById("level").innerText = level;
+        // Додати оновлення рівня, якщо потрібно
     }
 }
