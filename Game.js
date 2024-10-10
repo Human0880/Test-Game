@@ -11,10 +11,7 @@ let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 50
 function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
-        document.getElementById("farmButton").disabled = true;
-        document.getElementById("farmButton").classList.remove("green");
-        document.getElementById("farmButton").classList.add("gray");
-        
+        document.getElementById("farmButton").style.opacity = 0.5; // Вимкнути кнопку
         document.getElementById("claimButton").disabled = true;
 
         // Встановлюємо інтервал для відліку часу
@@ -25,13 +22,8 @@ function startFarming() {
             } else {
                 clearInterval(farmingInterval);
                 farmingActive = false;
-                document.getElementById("farmButton").disabled = false;
-                document.getElementById("farmButton").classList.remove("gray");
-                document.getElementById("farmButton").classList.add("green");
-
+                document.getElementById("farmButton").style.opacity = 1; // Увімкнути кнопку
                 document.getElementById("claimButton").disabled = false;
-                document.getElementById("claimButton").classList.remove("gray");
-                document.getElementById("claimButton").classList.add("green");
             }
         }, 1000);
     }
@@ -55,8 +47,6 @@ function resetFarming() {
     timer = 30; // Повертаємо таймер до 30 секунд
     updateTimerDisplay();
     document.getElementById("claimButton").disabled = true;
-    document.getElementById("claimButton").classList.remove("green");
-    document.getElementById("claimButton").classList.add("gray");
 }
 
 function buyBoost() {
