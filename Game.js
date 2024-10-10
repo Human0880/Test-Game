@@ -10,13 +10,9 @@ let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 50
 function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
-        document.getElementById("farmButton").disabled = true;
-        document.getElementById("farmButton").classList.remove("green");
-        document.getElementById("farmButton").classList.add("gray");
-        
-        document.getElementById("claimButton").disabled = true;
+        document.querySelector(".btn.farm").disabled = true;
+        document.querySelector(".btn.claim").disabled = true;
 
-        // Встановлюємо інтервал для відліку часу
         farmingInterval = setInterval(() => {
             if (timer > 0) {
                 timer--;
@@ -24,13 +20,8 @@ function startFarming() {
             } else {
                 clearInterval(farmingInterval);
                 farmingActive = false;
-                document.getElementById("farmButton").disabled = false;
-                document.getElementById("farmButton").classList.remove("gray");
-                document.getElementById("farmButton").classList.add("green");
-
-                document.getElementById("claimButton").disabled = false;
-                document.getElementById("claimButton").classList.remove("gray");
-                document.getElementById("claimButton").classList.add("green");
+                document.querySelector(".btn.farm").disabled = false;
+                document.querySelector(".btn.claim").disabled = false;
             }
         }, 1000);
     }
@@ -53,9 +44,7 @@ function claimReward() {
 function resetFarming() {
     timer = 30; // Повертаємо таймер до 30 секунд
     updateTimerDisplay();
-    document.getElementById("claimButton").disabled = true;
-    document.getElementById("claimButton").classList.remove("green");
-    document.getElementById("claimButton").classList.add("gray");
+    document.querySelector(".btn.claim").disabled = true;
 }
 
 function buyBoost() {
@@ -64,7 +53,6 @@ function buyBoost() {
         farmRate += boostAmount[boostLevel - 1];
         boostLevel++;
         document.getElementById("balance").innerText = balance;
-        document.getElementById("boostLevel").innerText = boostLevel;
         updateBoostInfo();
     }
 }
