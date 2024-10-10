@@ -24,12 +24,12 @@ body {
 }
 
 .balance, .timer, .lvl {
-    font-size: 40pt;
+    font-size: 20pt;
     margin: 10px 0;
 }
 
 .timer {
-    font-size: 100pt;
+    font-size: 20pt;
     color: #ADB4CC;
 }
 
