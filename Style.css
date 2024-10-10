@@ -16,49 +16,38 @@ body {
 }
 
 .logo {
-    width: 100%; /* Логотип на всю ширину контейнера */
-    max-width: 300px; /* Максимальна ширина логотипу */
-    height: auto;
+    width: 267px; /* Встановлюємо ширину логотипу */
+    height: 99px; /* Встановлюємо висоту логотипу */
     position: absolute;
-    top: 20px; /* Від краю 20px */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо */
-}
-
-.level {
-    font-size: 40pt; /* Розмір шрифту для LVL */
-    color: #C7C7C7;
-    position: absolute;
-    top: 75px; /* Відстань від верхнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо */
+    top: 30px; /* Відстань 30px від верхнього краю */
+    left: 62px; /* Відстань 62px від лівого краю */
 }
 
 .balance {
-    font-size: 40pt; /* Розмір шрифту для балансу */
+    font-size: 20pt; /* Розмір шрифту для балансу */
     color: #C7C7C7;
     position: absolute;
-    top: 110px; /* Відстань від верхнього краю */
+    top: 159px; /* Відстань від верхнього краю */
     left: 50%;
-    transform: translateX(-50%); /* Центруємо */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
 .timer {
-    font-size: 100pt; /* Розмір шрифту для таймера */
+    font-size: 40pt; /* Розмір шрифту для таймера */
     color: #ADB4CC;
     position: absolute;
-    top: 170px; /* Відстань від верхнього краю */
+    top: 236px; /* Відстань від верхнього краю */
     left: 50%;
-    transform: translateX(-50%); /* Центруємо */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
 .buttons {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 80px; /* Відстань від нижнього краю */
+    bottom: 150px; /* Відстань від нижнього краю */
     left: 50%;
-    transform: translateX(-50%); /* Центруємо */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
 .btn {
@@ -70,15 +59,15 @@ body {
 }
 
 .btn img {
-    width: 150px; /* Встановлено фіксовану ширину для кнопок */
+    width: 150px; /* Встановлено фіксовану ширину для кнопок Farm та Claim */
     height: 45px; /* Встановлено фіксовану висоту для кнопок */
 }
 
 #boostButton {
     position: absolute;
-    bottom: 20px; /* Відстань від нижнього краю */
+    bottom: 80px; /* Відстань від нижнього краю */
     left: 50%;
-    transform: translateX(-50%); /* Центруємо */
+    transform: translateX(-50%); /* Центруємо по горизонталі */
     width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
     height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
 }
