@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 384px; /* Відстань від верхнього краю */
+    bottom: 150px; /* Відстань від нижнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо по горизонталі */
 }
@@ -65,7 +65,7 @@ body {
 
 #boostButton {
     position: absolute;
-    top: 459px; /* Відстань від верхнього краю */
+    bottom: 80px; /* Відстань від нижнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо по горизонталі */
     width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
