@@ -1,4 +1,5 @@
 let balance = 5000; // Стартовий баланс
+let level = 1; // Початковий рівень
 let farmingActive = false;
 let farmingInterval;
 let timer = 20; // Таймер на 20 секунд
@@ -34,6 +35,14 @@ function claimReward() {
     if (timer === 0) {
         balance += farmRate;
         document.getElementById("balance").innerText = balance;
+
+        // Збільшуємо рівень, якщо баланс перевищує 10000
+        if (balance >= 10000) {
+            level++;
+            document.getElementById("level").innerText = `LVL: ${level}`;
+            balance = 5000; // Скидаємо баланс після підвищення рівня
+        }
+
         resetFarming();
     }
 }
