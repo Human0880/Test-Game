@@ -1,57 +1,71 @@
 body {
-    background-color: #EBECF0; /* Колір фону */
+    background-color: #EBECF0;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Заборонити прокручування */
+    overflow: hidden; /* Прибираємо прокрутку */
 }
 
 .container {
-    width: 100%; 
-    height: 100%; /* Надаємо контейнеру 100% висоти */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Вирівнюємо по верхньому краю */
-    position: relative;
+    width: 390px;
+    height: 844px;
+    margin: 0 auto;
+    position: relative; /* Додаємо позицію для контейнера */
 }
 
 .logo {
-    width: auto;
-    height: 80px; /* Задаємо фіксовану висоту для логотипу */
-    margin-top: 10px; /* Відступ зверху */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    position: absolute;
+    top: 10px; /* Від краю 10px */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
 
-.balance, .timer, .lvl {
-    font-size: 40pt; /* Розмір шрифту для балансу та рівня */
-    margin: 20px 0; /* Відступи між елементами */
+.balance, .timer, .level {
+    font-size: 40pt; /* Збільшено шрифт для балансу */
+    color: #C7C7C7;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
 
 .timer {
-    font-size: 20pt; /* Розмір шрифту для таймера */
-    color: #ADB4CC; /* Колір таймера */
+    font-size: 20pt; /* Зменшено шрифт для таймера */
+    color: #ADB4CC;
+    top: 80px; /* Відстань між логотипом та таймером 20px */
+}
+
+.level {
+    top: 50px; /* Відстань між таймером та LVL 20px */
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Відступ перед кнопками */
+    position: absolute;
+    bottom: 20px; /* Відстань від нижнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
 
 .btn {
-    padding: 0; /* Убираємо padding для кнопок */
-    border: none; /* Без обрамлення */
+    border: none;
+    background: none;
     cursor: pointer;
+    padding: 0;
+    margin: 0 5px; /* Відстань між кнопками */
 }
 
 .btn img {
-    width: 150px; /* Ширина для кнопок Farm і Claim */
-    height: 45px; /* Висота для кнопок Farm і Claim */
+    width: 150px; /* Встановлено фіксовану ширину для кнопок */
+    height: 45px; /* Встановлено фіксовану висоту для кнопок */
 }
 
-.btn.buy img {
-    width: 200px; /* Ширина для кнопки Buy */
-    height: 60px; /* Висота для кнопки Buy */
+.btn:last-child img {
+    width: 200px; /* Кнопка Buy більша */
+    height: 60px;
 }
