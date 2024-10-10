@@ -49,20 +49,13 @@ function resetFarming() {
 }
 
 function buyBoost() {
-    if (balance >= boostCost[playerLevel - 1]) {
+    if (playerLevel <= 10 && balance >= boostCost[playerLevel - 1]) {
         balance -= boostCost[playerLevel - 1];
         farmRate += boostAmount[playerLevel - 1];
         playerLevel++; // Збільшуємо рівень гравця
         document.getElementById("balance").innerText = balance;
         document.getElementById("playerLevel").innerText = playerLevel; // Оновлюємо LVL
-        updateBoostInfo();
-    }
-}
-
-function updateBoostInfo() {
-    if (playerLevel <= 10) {
-        document.getElementById("boostCost").innerText = boostCost[playerLevel - 1];
     } else {
-        document.getElementById("boostCost").innerText = "-";
+        alert("Ви досягли максимального рівня або недостатньо грошей!");
     }
 }
