@@ -1,20 +1,18 @@
 body {
-    background-color: #EBECF0;
+    background-color: #EBECF0; /* Колір фону */
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
     height: 100vh; /* Заповнити весь екран */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
-    max-width: 390px; /* Ширина контейнера */
-    width: 100%; /* Адаптивна ширина */
-    padding: 20px;
+    position: relative;
+    width: 390px; /* Ширина контейнера */
+    height: 844px; /* Висота контейнера */
+    margin: auto;
 }
 
 .logo {
@@ -30,13 +28,13 @@ body {
 }
 
 .balance {
-    font-size: 1.8em;
-    margin: 10px 0;
+    font-size: 40pt; /* Розмір шрифту для балансу */
+    color: #C7C7C7; /* Колір балансу */
 }
 
 .timer {
-    font-size: 2.5em;
-    margin: 10px 0;
+    font-size: 100pt; /* Розмір шрифту для таймера */
+    color: #ADB4CC; /* Колір таймера */
 }
 
 .buttons {
@@ -47,18 +45,4 @@ body {
 
 .btn {
     cursor: pointer;
-    display: inline-block; /* Зберігати пропорції зображення */
-    width: auto; /* Авто ширина */
-    height: auto; /* Авто висота */
-}
-
-#farmButton,
-#claimButton {
-    width: 150px; /* Ширина кнопки Farm і Claim */
-    height: 45px; /* Висота кнопки Farm і Claim */
-}
-
-#boostButton {
-    width: 200px; /* Ширина кнопки Buy */
-    height: 60px; /* Висота кнопки Buy */
 }
