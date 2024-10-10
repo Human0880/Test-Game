@@ -5,32 +5,31 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Забороняє прокрутку */
+    overflow: hidden; /* Запобігання масштабуванню */
 }
 
 .container {
-    width: 100%;
-    height: 100vh; /* Висота на всю висоту екрану */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Центрує контент вертикально */
+    max-width: 390px;
+    height: 844px; /* Висота контейнера */
+    margin: auto;
+    padding: 20px 0; /* Відступи зверху та знизу */
 }
 
 .logo {
-    width: 75%; /* Діапазон ширини логотипу */
+    width: 100%;
     max-width: 300px;
     height: auto;
+    margin-top: 20px; /* Відступ зверху */
 }
 
-.balance, .timer, .lvl {
-    font-size: 40pt;
-    margin: 10px 0;
+.level, .balance, .timer {
+    margin-top: 50px; /* Відступ між елементами */
+    font-size: 40pt; /* Розмір шрифту для LVL та балансу */
 }
 
 .timer {
-    font-size: 30pt;
-    color: #ADB4CC;
+    font-size: 20pt; /* Розмір шрифту для таймера */
+    color: #ADB4CC; /* Колір таймера */
 }
 
 .buttons {
@@ -40,18 +39,19 @@ body {
 }
 
 .btn {
-    background-color: #007bff; /* Встановіть колір кнопок */
-    color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1.2em;
-    margin: 0 5px;
-    width: 150px; /* Встановіть ширину для кнопок Farm та Claim */
-    height: 45px; /* Встановіть висоту для кнопок Farm та Claim */
+    cursor: pointer;
+    padding: 0; /* Вимкнення відступу */
+    margin: 0 10px; /* Відступи між кнопками */
 }
 
-.btn:last-child {
+.btn-img {
+    width: 150px; /* Ширина для кнопок Farm та Claim */
+    height: 45px; /* Висота для кнопок Farm та Claim */
+}
+
+.buy {
     width: 200px; /* Ширина для кнопки Buy */
     height: 60px; /* Висота для кнопки Buy */
 }
