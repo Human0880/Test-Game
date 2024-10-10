@@ -8,15 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Логотип" class="logo">
-        <div class="level">LVL: <span id="playerLevel">1</span></div>
-        <div class="balance"><span id="balance">5000</span> MN</div>
-        <div class="timer"><span id="timer">00:30</span></div>
-        <div class="buttons">
-            <img id="farmButton" src="Farm.png" alt="Farm" class="btn" onclick="startFarming()" style="width: 150px; height: 45px;">
-            <img id="claimButton" src="Claim.png" alt="Claim" class="btn" onclick="claimReward()" style="width: 150px; height: 45px;" disabled>
+        <img src="logo.png" alt="Логотип" class="logo" style="position: absolute; left: -46px; top: 110px;">
+        <div class="level" style="position: absolute; left: -112px; top: 290px;">LVL: <span id="level">1</span></div>
+        <div class="balance" style="position: absolute; left: -112px; top: 339px;"> <span id="balance">5000</span> MX</div>
+        <div class="timer" style="position: absolute; left: -60px; top: 388px;"> <span id="timer">00:00</span></div>
+        <div class="buttons" style="position: relative; top: 564px; display: flex; justify-content: center; width: 100%;">
+            <img id="farmButton" class="btn" src="Farm.png" alt="Farm" style="width: 150px; height: 45px; margin-right: 10px;" onclick="startFarming()">
+            <img id="claimButton" class="btn" src="Claim.png" alt="Claim" style="width: 150px; height: 45px;" onclick="claimReward()" disabled>
         </div>
-        <img id="boostButton" src="Buy.png" alt="Buy" class="btn boost" onclick="buyBoost()" style="width: 200px; height: 60px;">
+        <img id="boostButton" class="btn" src="Buy.png" alt="Buy" style="width: 200px; height: 60px; position: absolute; left: 95px; top: 673px;" onclick="buyBoost()">
     </div>
     <script src="game.js"></script>
 </body>
