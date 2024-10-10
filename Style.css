@@ -20,7 +20,16 @@ body {
     max-width: 300px; /* Максимальна ширина логотипу */
     height: auto;
     position: absolute;
-    top: 110px; /* Від краю 110px */
+    top: 20px; /* Від краю 20px */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
+}
+
+.level {
+    font-size: 40pt; /* Розмір шрифту для LVL */
+    color: #C7C7C7;
+    position: absolute;
+    top: 75px; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
 }
@@ -29,7 +38,7 @@ body {
     font-size: 40pt; /* Розмір шрифту для балансу */
     color: #C7C7C7;
     position: absolute;
-    top: 339px; /* Відстань від верхнього краю */
+    top: 110px; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
 }
@@ -38,7 +47,7 @@ body {
     font-size: 100pt; /* Розмір шрифту для таймера */
     color: #ADB4CC;
     position: absolute;
-    top: 388px; /* Відстань від верхнього краю */
+    top: 170px; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
 }
