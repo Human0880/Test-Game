@@ -20,8 +20,14 @@ body {
     justify-content: center; /* Центруємо вертикально */
 }
 
+.level {
+    font-size: 40pt; /* Розмір шрифту для рівня */
+    color: #C7C7C7; /* Колір тексту */
+    margin-top: 20px; /* Відстань від верхньої частини */
+}
+
 .logo {
-    margin-top: 110px; /* Відстань від верхньої частини */
+    margin-top: 10px; /* Відстань від рівня */
     width: 298px; /* Ширина логотипу */
     height: auto;
 }
