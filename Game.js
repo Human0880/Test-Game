@@ -4,15 +4,20 @@ let farmingInterval;
 let timer = 30; // Таймер на 30 секунд
 let farmRate = 100; // Базова ставка фарму
 let boostLevel = 1; // Рівень бусту
+let playerLevel = 1; // Рівень гравця
 let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
 let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
 
 function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
-        document.querySelector(".btn.farm").disabled = true;
-        document.querySelector(".btn.claim").disabled = true;
+        document.getElementById("farmButton").disabled = true;
+        document.getElementById("farmButton").classList.remove("green");
+        document.getElementById("farmButton").classList.add("gray");
+        
+        document.getElementById("claimButton").disabled = true;
 
+        // Встановлюємо інтервал для відліку часу
         farmingInterval = setInterval(() => {
             if (timer > 0) {
                 timer--;
@@ -20,8 +25,13 @@ function startFarming() {
             } else {
                 clearInterval(farmingInterval);
                 farmingActive = false;
-                document.querySelector(".btn.farm").disabled = false;
-                document.querySelector(".btn.claim").disabled = false;
+                document.getElementById("farmButton").disabled = false;
+                document.getElementById("farmButton").classList.remove("gray");
+                document.getElementById("farmButton").classList.add("green");
+
+                document.getElementById("claimButton").disabled = false;
+                document.getElementById("claimButton").classList.remove("gray");
+                document.getElementById("claimButton").classList.add("green");
             }
         }, 1000);
     }
@@ -44,7 +54,9 @@ function claimReward() {
 function resetFarming() {
     timer = 30; // Повертаємо таймер до 30 секунд
     updateTimerDisplay();
-    document.querySelector(".btn.claim").disabled = true;
+    document.getElementById("claimButton").disabled = true;
+    document.getElementById("claimButton").classList.remove("green");
+    document.getElementById("claimButton").classList.add("gray");
 }
 
 function buyBoost() {
@@ -52,7 +64,10 @@ function buyBoost() {
         balance -= boostCost[boostLevel - 1];
         farmRate += boostAmount[boostLevel - 1];
         boostLevel++;
+        playerLevel++; // Збільшуємо рівень гравця
         document.getElementById("balance").innerText = balance;
+        document.getElementById("boostLevel").innerText = boostLevel;
+        document.getElementById("playerLevel").innerText = playerLevel; // Оновлюємо LVL
         updateBoostInfo();
     }
 }
