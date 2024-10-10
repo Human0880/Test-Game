@@ -47,9 +47,18 @@ body {
 
 .btn {
     cursor: pointer;
+    display: inline-block; /* Зберігати пропорції зображення */
+    width: auto; /* Авто ширина */
+    height: auto; /* Авто висота */
 }
 
-.boost-info {
-    margin-top: 20px;
-    font-size: 1.2em;
+#farmButton,
+#claimButton {
+    width: 150px; /* Ширина кнопки Farm і Claim */
+    height: 45px; /* Висота кнопки Farm і Claim */
+}
+
+#boostButton {
+    width: 200px; /* Ширина кнопки Buy */
+    height: 60px; /* Висота кнопки Buy */
 }
