@@ -25,29 +25,33 @@ body {
     transform: translateX(-50%); /* Центруємо */
 }
 
-.balance, .timer, .level {
-    font-size: 40pt; /* Збільшено шрифт для балансу */
+.level, .balance, .timer {
+    font-size: 40pt; /* Розмір шрифту для лвл і балансу */
     color: #C7C7C7;
     position: absolute;
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
 }
 
-.timer {
-    font-size: 20pt; /* Зменшено шрифт для таймера */
-    color: #ADB4CC;
-    top: 80px; /* Відстань між логотипом та таймером 20px */
+.level {
+    top: 40px; /* Відстань між логотипом та лвл 15px */
 }
 
-.level {
-    top: 50px; /* Відстань між таймером та LVL 20px */
+.balance {
+    top: 55px; /* Відстань між лвл та балансом 15px */
+}
+
+.timer {
+    font-size: 20pt; /* Розмір шрифту для таймера */
+    color: #ADB4CC;
+    top: 70px; /* Відстань між балансом та таймером 15px */
 }
 
 .buttons {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 20px; /* Відстань від нижнього краю */
+    bottom: 80px; /* Відстань від нижнього краю */
     left: 50%;
     transform: translateX(-50%); /* Центруємо */
 }
@@ -68,4 +72,11 @@ body {
 .btn:last-child img {
     width: 200px; /* Кнопка Buy більша */
     height: 60px;
+}
+
+#boostButton {
+    position: absolute;
+    bottom: 20px; /* Відстань від нижнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо */
 }
