@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+#balance, #timer {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+button {
+    padding: 15px 32px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px; /* Відступ між кнопками */
+    width: 40%; /* Ширина кнопок */
+}
+
+button#farmButton {
+    background-color: #4CAF50; /* Зелена кнопка для Farm */
+}
+
+button#claimButton {
+    background-color: #CCCCCC; /* Сіра кнопка для Claim */
+}
+
+button#farmButton.disabled {
+    background-color: #CCCCCC; /* Сіра кнопка, коли фармінг активний */
+}
+
+button#claimButton.enabled {
+    background-color: #4CAF50; /* Зелена кнопка, коли можна забрати нагороду */
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#boostInfo {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#levelInfo {
+    margin-top: 10px;
+    font-size: 20px;
+}
