@@ -53,7 +53,7 @@ body {
     position: absolute;
     top: 300px; /* Позиція відносно верхнього краю */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%); /* Центруємо по горизонталі і вертикалі */
 }
 
 .buttons {
