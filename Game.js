@@ -1,11 +1,19 @@
-let balance = 5000; // Стартовий баланс
+let balance = localStorage.getItem('balance') ? parseInt(localStorage.getItem('balance')) : 5000; // Стартовий баланс
 let farmingActive = false;
 let farmingInterval;
 let timer = 20; // Таймер на 20 секунд
 let farmRate = 100; // Базова ставка фарму
-let level = 1; // Рівень
+let level = localStorage.getItem('level') ? parseInt(localStorage.getItem('level')) : 1; // Рівень
 let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
-let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
+let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бустів
+
+// Оновлення значень на екрані
+updateDisplay();
+
+function updateDisplay() {
+    document.getElementById("balance").innerText = balance;
+    document.getElementById("level").innerText = level; // Додано для оновлення рівня
+}
 
 function startFarming() {
     if (!farmingActive) {
@@ -36,7 +44,8 @@ function updateTimerDisplay() {
 function claimReward() {
     if (timer === 0) {
         balance += farmRate;
-        document.getElementById("balance").innerText = balance;
+        localStorage.setItem('balance', balance); // Зберігаємо баланс
+        updateDisplay();
         resetFarming();
     }
 }
@@ -52,7 +61,14 @@ function buyBoost() {
         balance -= boostCost[level - 1];
         farmRate += boostAmount[level - 1];
         level++;
-        document.getElementById("balance").innerText = balance;
-        // Додати оновлення рівня, якщо потрібно
+        localStorage.setItem('balance', balance); // Зберігаємо баланс
+        localStorage.setItem('level', level); // Зберігаємо рівень
+        updateDisplay();
     }
 }
+
+// Додати подію при закритті вікна для збереження прогресу
+window.addEventListener('beforeunload', function() {
+    localStorage.setItem('balance', balance);
+    localStorage.setItem('level', level);
+});
