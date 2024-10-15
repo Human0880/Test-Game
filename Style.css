@@ -1,6 +1,6 @@
 body {
     background-color: #EBECF0;
-    color: #ADB4CC;
+    color: white;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -12,66 +12,71 @@ body {
     width: 390px;
     height: 844px;
     margin: 0 auto;
-    position: relative;
+    position: relative; /* Додаємо позицію для контейнера */
 }
 
 .logo {
-    width: 267px;
-    height: 99px;
+    width: 267px; /* Встановлюємо ширину логотипу */
+    height: 99px; /* Встановлюємо висоту логотипу */
     position: absolute;
-    top: 30px;
-    left: 62px;
+    top: 30px; /* Відстань 30px від верхнього краю */
+    left: 62px; /* Відстань 62px від лівого краю */
 }
 
 .balance {
-    font-size: 20pt;
+    font-size: 20pt; /* Розмір шрифту для балансу */
     color: #C7C7C7;
     position: absolute;
-    top: 159px;
+    top: 159px; /* Відстань від верхнього краю */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
 .timer {
-    font-size: 40pt;
+    font-size: 40pt; /* Розмір шрифту для таймера */
     color: #ADB4CC;
     position: absolute;
-    top: 236px;
+    top: 236px; /* Відстань від верхнього краю */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+}
+
+.level {
+    font-size: 18pt; /* Розмір шрифту для рівня */
+    color: #C7C7C7; /* Колір тексту */
+    position: absolute;
+    top: 300px; /* Відстань від верхнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: absolute;
-    top: 384px;
-    left: 30px;
-    right: 30px;
-}
-
-.farm-claim-btn {
-    width: 150px;
-    height: 45px;
-    background-color: #FFFFFF;
-    color: #ADB4CC;
-    border: none;
-    border-radius: 20px;
-    font-size: 16pt;
-    cursor: pointer;
-}
-
-.buy-btn {
-    position: absolute;
-    top: 459px;
+    bottom: 150px; /* Відстань від нижнього краю */
     left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 60px;
-    background-color: #FFFFFF;
-    color: #ADB4CC;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+}
+
+.btn {
     border: none;
-    border-radius: 20px;
-    font-size: 18pt;
+    background: none;
     cursor: pointer;
+    padding: 0;
+    margin: 0 5px; /* Відстань між кнопками */
+}
+
+.btn img {
+    width: 150px; /* Встановлено фіксовану ширину для кнопок Farm та Claim */
+    height: 45px; /* Встановлено фіксовану висоту для кнопок */
+}
+
+#boostButton {
+    position: absolute;
+    bottom: 80px; /* Відстань від нижнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
+    height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
 }
