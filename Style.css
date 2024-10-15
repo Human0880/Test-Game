@@ -7,6 +7,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    -webkit-user-select: none; /* Заборона копіювання тексту в браузері Chrome/Safari/Opera */
+    -moz-user-select: none;    /* Заборона копіювання тексту в браузері Firefox */
+    -ms-user-select: none;     /* Заборона копіювання тексту в браузері Internet Explorer/Edge */
+    user-select: none;         /* Загальна заборона копіювання тексту */
 }
 
 .container {
@@ -36,9 +40,9 @@ body {
     font-size: 40pt; /* Фіксований розмір шрифту для таймера */
     color: #ADB4CC;
     position: absolute;
-    top: 236px; /* Позиція відносно верхнього краю */
-    left: 50%; /* Розташування по центру */
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    top: 236px; /* Відстань від верхнього краю */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центруємо по горизонталі і вертикалі */
 }
 
 .level {
