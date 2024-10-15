@@ -9,13 +9,20 @@
 <body>
     <div class="container">
         <img src="logo.png" alt="Логотип" class="logo">
-        <div class="balance"><span id="balance">1000</span> MN</div>
+        <div class="balance"><span id="balance">5000</span> MX</div>
         <div class="timer"><span id="timer">00:00</span></div>
+        <div class="level">Рівень: <span id="level">1</span></div> <!-- Додаємо рівень -->
         <div class="buttons">
-            <button id="farmButton" class="btn farm-claim-btn" onclick="startFarming()">FARM</button>
-            <button id="claimButton" class="btn farm-claim-btn" onclick="claimReward()" disabled>CLAIM</button>
+            <button id="farmButton" class="btn" onclick="startFarming()">
+                <img src="Farm.png" alt="Farm">
+            </button>
+            <button id="claimButton" class="btn" onclick="claimReward()" disabled>
+                <img src="Claim.png" alt="Claim">
+            </button>
         </div>
-        <button id="boostButton" class="btn buy-btn" onclick="buyBoost()">BUY</button>
+        <button id="boostButton" class="btn" onclick="buyBoost()">
+            <img src="Buy.png" alt="Buy">
+        </button>
     </div>
     <script src="game.js"></script>
 </body>
