@@ -9,34 +9,34 @@ body {
 }
 
 .container {
-    width: 390px;
-    height: 844px;
-    margin: 0 auto;
+    width: 100vw; /* Ширина контейнера 100% від ширини екрану */
+    height: 100vh; /* Висота контейнера 100% від висоти екрану */
+    margin: 0;
     position: relative;
 }
 
 .logo {
-    width: 267px;
-    height: 99px;
+    width: 68.5vw; /* Адаптивна ширина логотипу (267px на екрані шириною 390px) */
+    height: 11.7vh; /* Адаптивна висота логотипу */
     position: absolute;
-    top: 30px;
-    left: 62px;
+    top: 3.6vh; /* Відстань 30px від верхнього краю на екрані висотою 844px */
+    left: 8vw; /* Відстань 62px від лівого краю на екрані шириною 390px */
 }
 
 .balance {
-    font-size: 20pt;
+    font-size: 5.1vw; /* Адаптивний розмір шрифту для балансу (20pt на 390px) */
     color: #C7C7C7;
     position: absolute;
-    top: 159px;
+    top: 18.8vh; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%);
 }
 
 .timer {
-    font-size: 40pt;
+    font-size: 10.2vw; /* Адаптивний розмір шрифту для таймера (40pt на 390px) */
     color: #ADB4CC;
     position: absolute;
-    top: 236px;
+    top: 27.9vh; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -45,33 +45,59 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 384px;
-    left: 30px;
-    right: 30px;
+    top: 45.5vh; /* Відстань від верхнього краю */
+    left: 7.7vw; /* Відстань від лівого краю */
+    right: 7.7vw; /* Відстань від правого краю */
 }
 
 .farm-claim-btn {
-    width: 150px;
-    height: 45px;
+    width: 38.4vw; /* Ширина кнопки 150px на екрані шириною 390px */
+    height: 5.3vh; /* Висота кнопки 45px на екрані висотою 844px */
     background-color: #FFFFFF;
     color: #ADB4CC;
     border: none;
     border-radius: 20px;
-    font-size: 16pt;
+    font-size: 4.1vw; /* Адаптивний розмір тексту */
     cursor: pointer;
 }
 
 .buy-btn {
     position: absolute;
-    top: 459px;
+    top: 54.4vh; /* Відстань від верхнього краю */
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 60px;
+    width: 51.3vw; /* Ширина кнопки BUY (200px на 390px) */
+    height: 7.1vh; /* Висота кнопки BUY (60px на 844px) */
     background-color: #FFFFFF;
     color: #ADB4CC;
     border: none;
     border-radius: 20px;
-    font-size: 18pt;
+    font-size: 4.6vw; /* Адаптивний розмір тексту */
     cursor: pointer;
+}
+
+/* Для дуже великих екранів (як iPad) */
+@media (min-width: 768px) {
+    .logo {
+        width: 250px;
+        height: 93px;
+    }
+
+    .balance {
+        font-size: 24pt;
+    }
+
+    .timer {
+        font-size: 50pt;
+    }
+
+    .farm-claim-btn {
+        width: 200px;
+        height: 60px;
+    }
+
+    .buy-btn {
+        width: 250px;
+        height: 80px;
+    }
 }
