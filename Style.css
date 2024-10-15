@@ -1,6 +1,6 @@
 body {
     background-color: #EBECF0;
-    color: white;
+    color: #ADB4CC;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -12,62 +12,66 @@ body {
     width: 390px;
     height: 844px;
     margin: 0 auto;
-    position: relative; /* Додаємо позицію для контейнера */
+    position: relative;
 }
 
 .logo {
-    width: 267px; /* Встановлюємо ширину логотипу */
-    height: 99px; /* Встановлюємо висоту логотипу */
+    width: 267px;
+    height: 99px;
     position: absolute;
-    top: 30px; /* Відстань 30px від верхнього краю */
-    left: 62px; /* Відстань 62px від лівого краю */
+    top: 30px;
+    left: 62px;
 }
 
 .balance {
-    font-size: 20pt; /* Розмір шрифту для балансу */
+    font-size: 20pt;
     color: #C7C7C7;
     position: absolute;
-    top: 159px; /* Відстань від верхнього краю */
+    top: 159px;
     left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    transform: translateX(-50%);
 }
 
 .timer {
-    font-size: 40pt; /* Розмір шрифту для таймера */
+    font-size: 40pt;
     color: #ADB4CC;
     position: absolute;
-    top: 236px; /* Відстань від верхнього краю */
+    top: 236px;
     left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    transform: translateX(-50%);
 }
 
 .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
-    bottom: 150px; /* Відстань від нижнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    top: 384px;
+    left: 30px;
+    right: 30px;
 }
 
-.btn {
+.farm-claim-btn {
+    width: 150px;
+    height: 45px;
+    background-color: #FFFFFF;
+    color: #ADB4CC;
     border: none;
-    background: none;
+    border-radius: 20px;
+    font-size: 16pt;
     cursor: pointer;
-    padding: 0;
-    margin: 0 5px; /* Відстань між кнопками */
 }
 
-.btn img {
-    width: 150px; /* Встановлено фіксовану ширину для кнопок Farm та Claim */
-    height: 45px; /* Встановлено фіксовану висоту для кнопок */
-}
-
-#boostButton {
+.buy-btn {
     position: absolute;
-    bottom: 80px; /* Відстань від нижнього краю */
+    top: 459px;
     left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-    width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
-    height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
+    transform: translateX(-50%);
+    width: 200px;
+    height: 60px;
+    background-color: #FFFFFF;
+    color: #ADB4CC;
+    border: none;
+    border-radius: 20px;
+    font-size: 18pt;
+    cursor: pointer;
 }
