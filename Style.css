@@ -10,58 +10,61 @@ body {
 }
 
 .container {
-    width: 100%;
-    height: 100vh; /* Використовуємо всю висоту екрану */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 390px; /* Фіксована ширина для всіх пристроїв */
+    height: 844px; /* Фіксована висота для всіх пристроїв */
+    margin: 0 auto;
     position: relative;
 }
 
 .logo {
-    width: 30%; /* Ширина логотипу у відсотках від ширини екрану */
-    max-width: 267px;
-    height: auto;
+    width: 267px; /* Фіксована ширина логотипу */
+    height: 99px; /* Фіксована висота логотипу */
     position: absolute;
-    top: 5%;
+    top: 30px; /* Відстань від верхнього краю */
+    left: 62px; /* Відстань від лівого краю */
 }
 
 .balance {
-    font-size: 5vw; /* Розмір шрифту відносно ширини вікна */
+    font-size: 20pt; /* Фіксований розмір шрифту для балансу */
     color: #C7C7C7;
     position: absolute;
-    top: 25%; /* Позиція відносно верхньої частини екрану */
+    top: 159px; /* Позиція відносно верхнього краю */
+    left: 112px; /* Позиція відносно лівого краю */
 }
 
 .timer {
-    font-size: 8vw; /* Розмір шрифту для таймера */
+    font-size: 40pt; /* Фіксований розмір шрифту для таймера */
     color: #ADB4CC;
     position: absolute;
-    top: 35%; /* Позиція відносно верхньої частини екрану */
+    top: 236px; /* Позиція відносно верхнього краю */
+    left: 60px; /* Позиція відносно лівого краю */
 }
 
 .level {
-    font-size: 4vw; /* Розмір шрифту для рівня */
+    font-size: 20pt; /* Розмір шрифту для рівня */
     color: #C7C7C7;
     position: absolute;
-    top: 45%; /* Позиція рівня */
+    top: 300px; /* Позиція відносно верхнього краю */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .buttons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
+    width: 300px;
     position: absolute;
-    top: 60%; /* Позиція кнопок */
+    top: 384px; /* Позиція кнопок */
+    left: 30px; /* Позиція першої кнопки */
 }
 
 .btn {
     border: none;
     background-color: #D6D6D6;
     color: #A3A3A3;
-    font-size: 5vw; /* Розмір шрифту для кнопок */
-    padding: 10px 20px;
+    font-size: 20pt; /* Фіксований розмір шрифту для кнопок */
+    width: 150px; /* Фіксована ширина для кнопок Farm і Claim */
+    height: 45px; /* Фіксована висота для кнопок */
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -73,48 +76,14 @@ body {
 
 #boostButton {
     position: absolute;
-    top: 75%; /* Позиція кнопки Buy */
-    width: 50%; /* Ширина кнопки Buy у відсотках */
-    max-width: 200px; /* Максимальна ширина для великих екранів */
-    height: auto;
-    padding: 10px 0;
+    top: 459px; /* Позиція кнопки Buy */
+    left: 95px; /* Позиція відносно лівого краю */
+    width: 200px; /* Фіксована ширина для кнопки Buy */
+    height: 60px; /* Фіксована висота для кнопки Buy */
     border-radius: 25px;
 }
 
-/* Адаптація для маленьких екранів (ширина менше 768px) */
-@media (max-width: 768px) {
-    .balance {
-        font-size: 6vw;
-    }
-
-    .timer {
-        font-size: 10vw;
-    }
-
-    .level {
-        font-size: 5vw;
-    }
-
-    .btn {
-        font-size: 6vw;
-    }
-}
-
-/* Адаптація для дуже маленьких екранів (ширина менше 480px) */
-@media (max-width: 480px) {
-    .balance {
-        font-size: 7vw;
-    }
-
-    .timer {
-        font-size: 12vw;
-    }
-
-    .level {
-        font-size: 6vw;
-    }
-
-    .btn {
-        font-size: 7vw;
-    }
+/* Вимикаємо можливість масштабування на мобільних пристроях */
+html, body {
+    touch-action: manipulation;
 }
