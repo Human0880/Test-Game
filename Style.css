@@ -41,6 +41,15 @@ body {
     transform: translateX(-50%); /* Центруємо по горизонталі */
 }
 
+.level {
+    font-size: 18pt; /* Розмір шрифту для рівня */
+    color: #C7C7C7; /* Колір тексту */
+    position: absolute;
+    top: 300px; /* Відстань від верхнього краю */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -52,15 +61,18 @@ body {
 
 .btn {
     border: none;
-    background: none;
+    background-color: #D6D6D6; /* Фон кнопки */
+    color: #A3A3A3; /* Колір тексту */
+    font-size: 18pt; /* Розмір шрифту кнопок */
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
-    padding: 0;
-    margin: 0 5px; /* Відстань між кнопками */
+    margin: 0 10px; /* Відстань між кнопками */
+    transition: background-color 0.3s ease;
 }
 
-.btn img {
-    width: 150px; /* Встановлено фіксовану ширину для кнопок Farm та Claim */
-    height: 45px; /* Встановлено фіксовану висоту для кнопок */
+.btn:hover {
+    background-color: #C7C7C7; /* Колір кнопки при наведенні */
 }
 
 #boostButton {
@@ -69,5 +81,7 @@ body {
     left: 50%;
     transform: translateX(-50%); /* Центруємо по горизонталі */
     width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
-    height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
+    height: auto; /* Автоматична висота */
+    padding: 10px 0;
+    border-radius: 25px;
 }
