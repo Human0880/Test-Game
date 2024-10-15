@@ -1,92 +1,56 @@
-body {
-    background-color: #EBECF0;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    -webkit-user-select: none; 
-    -moz-user-select: none;    
-    -ms-user-select: none;     
-    user-select: none;         
+let balance = 5000; // Стартовий баланс
+let farmingActive = false;
+let farmingInterval;
+let timer = 20; // Таймер на 20 секунд
+let farmRate = 100; // Базова ставка фарму
+let level = 1; // Рівень
+let boostCost = [500, 1000, 1500, 6000, 10000, 20000, 50000, 100000, 200000, 500000]; // Вартість бустів
+let boostAmount = [100, 300, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 500000]; // Сума бусту
+
+function startFarming() {
+    if (!farmingActive) {
+        farmingActive = true;
+        document.getElementById("farmButton").disabled = true;
+        
+        // Відтворення звуку
+        document.getElementById("farmingSound").play();
+
+        // Встановлюємо інтервал для відліку часу
+        farmingInterval = setInterval(() => {
+            if (timer > 0) {
+                timer--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(farmingInterval);
+                farmingActive = false;
+                document.getElementById("farmButton").disabled = false;
+                document.getElementById("claimButton").disabled = false;
+            }
+        }, 1000);
+    }
 }
 
-.container {
-    width: 390px;
-    height: 844px;
-    margin: 0 auto;
-    position: relative;
+function claimReward() {
+    if (timer === 0) {
+        balance += farmRate;
+        document.getElementById("balance").innerText = balance;
+
+        // Відтворення звуку
+        document.getElementById("claimSound").play();
+        
+        resetFarming();
+    }
 }
 
-.logo {
-    width: 267px; 
-    height: 99px; 
-    position: absolute;
-    top: 30px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
+function buyBoost() {
+    if (level <= 10 && balance >= boostCost[level - 1]) {
+        balance -= boostCost[level - 1];
+        farmRate += boostAmount[level - 1];
+        level++;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("level").innerText = "Рівень: " + level;
 
-.balance {
-    font-size: 20pt; 
-    color: #C7C7C7;
-    position: absolute;
-    top: 159px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
-
-.timer {
-    font-size: 40pt; 
-    color: #ADB4CC;
-    position: absolute;
-    top: 236px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
-
-.level {
-    font-size: 20pt; 
-    color: #C7C7C7;
-    position: absolute;
-    top: 300px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    position: absolute;
-    top: 384px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
-
-.btn {
-    border: none;
-    background-color: #D6D6D6;
-    color: #A3A3A3;
-    font-size: 20pt; 
-    width: 140px; /* Зменшено для кращої пропорції */
-    height: 45px; 
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #C7C7C7;
-}
-
-#boostButton {
-    position: absolute;
-    top: 459px; 
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-    width: 200px; 
-    height: 60px; 
-    border-radius: 25px;
+        // Відтворення звуку
+        document.getElementById("boostSound").play();
+    }
 }
