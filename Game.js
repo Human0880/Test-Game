@@ -11,6 +11,9 @@ function startFarming() {
     if (!farmingActive) {
         farmingActive = true;
         document.getElementById("farmButton").disabled = true;
+        
+        // Відтворення звуку
+        document.getElementById("farmingSound").play();
 
         // Встановлюємо інтервал для відліку часу
         farmingInterval = setInterval(() => {
@@ -37,6 +40,10 @@ function claimReward() {
     if (timer === 0) {
         balance += farmRate;
         document.getElementById("balance").innerText = balance;
+
+        // Відтворення звуку
+        document.getElementById("claimSound").play();
+        
         resetFarming();
     }
 }
@@ -53,6 +60,9 @@ function buyBoost() {
         farmRate += boostAmount[level - 1];
         level++;
         document.getElementById("balance").innerText = balance;
-        document.getElementById("level").innerText = level; // Оновлюємо рівень в інтерфейсі
+        document.getElementById("level").innerText = "Рівень: " + level;
+
+        // Відтворення звуку
+        document.getElementById("boostSound").play();
     }
 }
