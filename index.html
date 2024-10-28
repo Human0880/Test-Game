@@ -1,34 +1,58 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Farm Game</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=375, initial-scale=1.0">
+    <title>MAX Interface</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="Логотип" class="logo">
-        <div class="balance"><span id="balance">5000</span> MX</div>
-        <div class="timer"><span id="timer">00:00</span></div>
-        <div class="level"><span id="level">Рівень: 1</span></div>
-        <div class="buttons">
-            <button id="farmButton" class="btn" onclick="startFarming()">
-                Farm
-            </button>
-            <button id="claimButton" class="btn" onclick="claimReward()" disabled>
-                Claim
-            </button>
+        <!-- Бургер-меню -->
+        <div class="burger-menu">
+            <button class="burger-button">☰</button>
+            <div class="burger-content">
+                <button>Help</button>
+                <button>Settings</button>
+            </div>
         </div>
-        <button id="boostButton" class="btn" onclick="buyBoost()">
-            Buy Boost
-        </button>
+        
+        <!-- Логотип або назва вкладки -->
+        <div class="logo">
+            <img src="logo.png" alt="MAX Logo" id="logoImage">
+            <h2 id="tabTitle" class="hidden"></h2> <!-- Текст заголовка прихований за замовчуванням -->
+        </div>
+        
+        <!-- Центральний блок з таймером, балансом та кнопкою Farm -->
+        <div class="center-area">
+            <div class="timer-balance">
+                <div class="balance">1000 MAX</div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            <button class="farm-button" id="farmButton">Farm</button>
+        </div>
+        
+        <!-- Підвал з кнопками навігації -->
+        <div class="nav-panel">
+            <a href="#" class="nav-button" onclick="showTab('Farm')">
+                <img src="Farm.png" alt="Farm Icon" class="nav-icon">
+                <span>Farm</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Explore')">
+                <img src="Explore.png" alt="Explore Icon" class="nav-icon">
+                <span>Explore</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Trade')">
+                <img src="Trade.png" alt="Trade Icon" class="nav-icon">
+                <span>Trade</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Inventory')">
+                <img src="Inventory.png" alt="Inventory Icon" class="nav-icon">
+                <span>Inventory</span>
+            </a>
+        </div>
     </div>
 
-    <audio id="farmingSound" src="farming.mp3" preload="auto"></audio>
-    <audio id="claimSound" src="claim.mp3" preload="auto"></audio>
-    <audio id="boostSound" src="boost.mp3" preload="auto"></audio>
-
-    <script src="game.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
