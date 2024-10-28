@@ -1,80 +1,139 @@
 body {
-    background-color: #EBECF0;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
-    padding: 0;
-    overflow: hidden; /* Прибираємо прокрутку */
+    font-family: 'Mulish', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    width: 390px;
-    height: 844px;
-    margin: 0 auto;
-    position: relative; /* Додаємо позицію для контейнера */
+    width: 375px;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.burger-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.burger-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.burger-content button {
+    background-color: #4A4A4A;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
 }
 
 .logo {
-    width: 267px; /* Встановлюємо ширину логотипу */
-    height: 99px; /* Встановлюємо висоту логотипу */
-    position: absolute;
-    top: 30px; /* Відстань 30px від верхнього краю */
-    left: 50%; /* Центруємо по горизонталі */
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    margin-top: 150px;
+    text-align: center;
 }
 
-.balance {
-    font-size: 20pt; /* Розмір шрифту для балансу */
-    color: #C7C7C7;
-    position: absolute;
-    top: 159px; /* Відстань від верхнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+.logo img {
+    width: 282px;
 }
 
-.timer {
-    font-size: 40pt; /* Розмір шрифту для таймера */
-    color: #ADB4CC;
-    position: absolute;
-    top: 236px; /* Відстань від верхнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+.hidden {
+    display: none;
 }
 
-.level {
-    font-size: 20pt; /* Розмір шрифту для рівня */
-    color: #C7C7C7;
-    position: absolute;
-    top: 306px; /* Відстань від верхнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-}
-
-.buttons {
+.center-area {
     display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 150px; /* Відстань від нижнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
+    flex-direction: column;
+    align-items: center;
 }
 
-.btn {
-    border: none;
-    background: none;
+.timer-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timer, .balance {
+    font-size: 24px;
     color: white;
-    cursor: pointer;
-    padding: 10px 20px; /* Встановлюємо відступи для кнопок */
-    margin: 0 5px; /* Відстань між кнопками */
-    font-size: 16px; /* Розмір шрифту для кнопок */
+    text-align: center;
 }
 
-#boostButton {
-    position: absolute;
-    bottom: 80px; /* Відстань від нижнього краю */
-    left: 50%;
-    transform: translateX(-50%); /* Центруємо по горизонталі */
-    width: 200px; /* Встановлено фіксовану ширину для кнопки Buy */
-    height: 60px; /* Встановлено фіксовану висоту для кнопки Buy */
+.farm-button, .back-button {
+    background-color: #FF3874;
+    border: none;
+    color: black;
+    padding: 20px 60px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.nav-panel {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.active {
+    color: #FF3874; /* Підсвічування активної вкладки */
+}
+
+#tabTitle {
+    color: #FF3874; /* Задає колір заголовку вкладки */
+    font-size: 24px; /* Зміна розміру шрифту заголовка */
+    margin-top: 20px; /* Відстань від верхньої частини контейнера */
+    text-align: center; /* Центрує текст */
+}
+
+.burger-button:focus + .burger-content,
+.burger-content:hover {
+    display: block;
 }
