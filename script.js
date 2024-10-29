@@ -1,10 +1,10 @@
 // Змінні для трекінгу
-let balance = 0; // Стартовий баланс
+let balance = 880; // Стартовий баланс
 let farmingActive = false; // Статус фармінгу
-let timeLeft = 30; // Таймер на 30 секунд
+let timeLeft = 10; // Таймер на 30 секунд
 
 // Оновлення елементу балансу
-document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Відображення початкового балансу
+document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Відображення початкового балансу
 
 // Функція для запуску фармінгу
 function startFarming() {
