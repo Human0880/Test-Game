@@ -1,3 +1,11 @@
+/* Заборона виділення тексту та перетягування */
+* {
+    user-select: none; /* Заборона виділення тексту */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    touch-action: manipulation; /* Заборона масштабування */
+}
 /* Основні стилі */
 body {
     margin: 0;
