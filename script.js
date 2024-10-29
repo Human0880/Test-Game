@@ -1,10 +1,10 @@
 // Змінні для трекінгу
-let balance = 880; // Стартовий баланс
+let balance = 100; // Стартовий баланс
 let farmingActive = false; // Статус фармінгу
 let timeLeft = 10; // Таймер на 30 секунд
 
 // Оновлення елементу балансу
-document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Відображення початкового балансу
+document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Відображення початкового балансу
 
 // Функція для запуску фармінгу
 function startFarming() {
@@ -13,7 +13,7 @@ function startFarming() {
         document.getElementById('farmButton').classList.add('hidden'); // Сховати кнопку Farm
         const claimButton = document.getElementById('claimButton');
         claimButton.classList.remove('hidden'); // Показати кнопку Claim
-        claimButton.style.backgroundColor = "#2A2A2A"; // Встановити сіру кнопку Claim
+        claimButton.style.backgroundColor = "grey"; // Встановити сіру кнопку Claim
         startTimer(); // Запустити таймер
     }
 }
@@ -32,7 +32,7 @@ function startTimer() {
         } else {
             clearInterval(interval); // Зупинити таймер
             const claimButton = document.getElementById('claimButton');
-            claimButton.style.backgroundColor = "38FF6A"; // Змінити колір кнопки Claim на зелений
+            claimButton.style.backgroundColor = "#38FF6A"; // Змінити колір кнопки Claim на зелений
             timerElement.textContent = "00:00"; // Скинути таймер
         }
     }, 1000);
@@ -42,7 +42,7 @@ function startTimer() {
 function claimReward() {
     if (timeLeft === 0 && farmingActive) {
         balance += 150; // Додаємо 150 монет до балансу
-        document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Оновити баланс
+        document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Оновити баланс
         document.getElementById('claimButton').classList.add('hidden'); // Сховати кнопку Claim
         document.getElementById('farmButton').classList.remove('hidden'); // Показати кнопку Farm знову
         farmingActive = false; // Скидаємо статус фармінгу
