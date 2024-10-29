@@ -4,7 +4,7 @@ let farmingActive = false; // Статус фармінгу
 let timeLeft = 10; // Таймер на 30 секунд
 
 // Оновлення елементу балансу
-document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Відображення початкового балансу
+document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Відображення початкового балансу
 
 // Функція для запуску фармінгу
 function startFarming() {
@@ -42,7 +42,7 @@ function startTimer() {
 function claimReward() {
     if (timeLeft === 0 && farmingActive) {
         balance += 150; // Додаємо 150 монет до балансу
-        document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Оновити баланс
+        document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Оновити баланс
         document.getElementById('claimButton').classList.add('hidden'); // Сховати кнопку Claim
         document.getElementById('farmButton').classList.remove('hidden'); // Показати кнопку Farm знову
         farmingActive = false; // Скидаємо статус фармінгу
