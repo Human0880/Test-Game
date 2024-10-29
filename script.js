@@ -13,7 +13,7 @@ function startFarming() {
         document.getElementById('farmButton').classList.add('hidden'); // Сховати кнопку Farm
         const claimButton = document.getElementById('claimButton');
         claimButton.classList.remove('hidden'); // Показати кнопку Claim
-        claimButton.style.backgroundColor = "#38FF6A"; // Встановити сіру кнопку Claim
+        claimButton.style.backgroundColor = "#2A2A2A"; // Встановити сіру кнопку Claim
         startTimer(); // Запустити таймер
     }
 }
