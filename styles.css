@@ -1,0 +1,211 @@
+/* Основні стилі */
+body {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 375px;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 20px;
+    overflow: hidden; /* Заборонити вихід контенту за межі */
+}
+
+/* Бургер-меню */
+.burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.burger-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.burger-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.burger-content button {
+    background-color: #4A4A4A;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Логотип */
+.logo {
+    margin-top: 150px;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+.logo img {
+    width: 282px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Центральна область */
+.center-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timer, .balance {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.farm-button, .claim-button {
+    background-color: #FF3874;
+    border: none;
+    color: black;
+    padding: 20px 60px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.farm-button:hover {
+    transform: scale(1.05); /* Збільшення кнопки при наведенні */
+}
+
+.claim-button {
+    background-color: grey; /* Сіра кнопка спочатку */
+}
+
+.claim-button:hover {
+    background-color: #38FF6A; /* Зелена кнопка при наведенні */
+}
+
+/* Панель навігації */
+.nav-panel {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    transition: color 0.3s;
+}
+
+.nav-button:hover {
+    color: #FF3874; /* Зміна кольору при наведенні */
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+#tabTitle {
+    color: #FF3874;
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Анімація бургер-меню */
+.burger-button:focus + .burger-content,
+.burger-content:hover {
+    display: block;
+}
+
+/* Панель вибору світу */
+.worlds-panel {
+    display: none; /* Панель прихована за замовчуванням */
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.worlds-panel h3 {
+    color: #FF3874;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.worlds-panel button {
+    background-color: #333;
+    border: 2px solid #FF3874;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.worlds-panel button:hover {
+    background-color: #FF3874;
+    color: black;
+}
+
+/* Анімація для появи елементів */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

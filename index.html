@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Бургер-меню -->
+        <div class="burger-menu">
+            <button class="burger-button">☰</button>
+            <div class="burger-content">
+                <button onclick="showTab('Help')">Help</button>
+                <button onclick="showTab('Settings')">Settings</button>
+            </div>
+        </div>
+        
+        <!-- Логотип або назва вкладки -->
+        <div class="logo">
+            <img src="logo.svg" alt="MAX Logo" id="logoImage">
+            <h2 id="tabTitle" class="hidden"></h2>
+        </div>
+        
+        <!-- Центральний блок з таймером, балансом та кнопкою Farm -->
+        <div class="center-area">
+            <div class="timer-balance">
+                <div class="balance" id="balanceDisplay">1000 MX</div>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            <button class="farm-button" id="farmButton" onclick="startFarming()">Farm</button>
+            <button class="claim-button hidden" id="claimButton" onclick="claimReward()">Claim</button>
+        </div>
+        
+        <!-- Навігаційна панель з можливістю переходу між світами -->
+        <div class="nav-panel">
+            <a href="#" class="nav-button" onclick="showTab('Farm')">
+                <img src="Farm.svg" alt="Farm Icon" class="nav-icon">
+                <span>Farm</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Explore')">
+                <img src="Explore.svg" alt="Explore Icon" class="nav-icon">
+                <span>Explore</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Trade')">
+                <img src="Trade.svg" alt="Trade Icon" class="nav-icon">
+                <span>Trade</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Inventory')">
+                <img src="Inventory.svg" alt="Inventory Icon" class="nav-icon">
+                <span>Inventory</span>
+            </a>
+            <a href="#" class="nav-button" onclick="showTab('Worlds')">
+                <img src="Worlds.svg" alt="Worlds Icon" class="nav-icon">
+                <span>Worlds</span>
+            </a>
+        </div>
+
+        <!-- Панель вибору світу для подорожей -->
+        <div class="worlds-panel hidden" id="worldsPanel">
+            <h3>Choose a World</h3>
+            <button onclick="selectWorld('Base World')">Base World</button>
+            <button onclick="selectWorld('Crystal Cave')">Crystal Cave</button>
+            <button onclick="selectWorld('Mystic Forest')">Mystic Forest</button>
+            <button onclick="selectWorld('Starry Haven')">Starry Haven</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
