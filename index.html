@@ -1,70 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=375, initial-scale=1.0">
-    <title>MAX Interface</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAX Multiverse Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Бургер-меню -->
-        <div class="burger-menu">
-            <button class="burger-button">☰</button>
-            <div class="burger-content">
-                <button>Help</button>
-                <button>Settings</button>
-            </div>
-        </div>
-        
-        <!-- Логотип або назва вкладки -->
-        <div class="logo">
-            <img src="logo.png" alt="MAX Logo" id="logoImage">
-            <h2 id="tabTitle" class="hidden"></h2> <!-- Текст заголовка прихований за замовчуванням -->
-        </div>
-        
-        <!-- Центральний блок з таймером, балансом та кнопкою Farm -->
-        <div class="center-area">
-            <div class="timer-balance">
-                <div class="balance">1000 MAX</div>
-                <div class="timer" id="timer">00:00</div>
-            </div>
-            <button class="farm-button" id="farmButton">Farm</button>
-        </div>
-        
-        <!-- Підвал з кнопками навігації -->
-        <div class="nav-panel">
-            <a href="#" class="nav-button" onclick="showTab('Farm')">
-                <img src="Farm.png" alt="Farm Icon" class="nav-icon">
-                <span>Farm</span>
-            </a>
-            <a href="#" class="nav-button" onclick="showTab('Explore')">
-                <img src="Explore.png" alt="Explore Icon" class="nav-icon">
-                <span>Explore</span>
-            </a>
-            <a href="#" class="nav-button" onclick="showTab('Trade')">
-                <img src="Trade.png" alt="Trade Icon" class="nav-icon">
-                <span>Trade</span>
-            </a>
-            <a href="#" class="nav-button" onclick="showTab('Inventory')">
-                <img src="Inventory.png" alt="Inventory Icon" class="nav-icon">
-                <span>Inventory</span>
-            </a>
-        </div>
+  <div class="top-bar">
+    <img src="logo.png" alt="Game Logo" class="logo">
+    <div class="balance">Баланс MAX: <span id="balance">0</span></div>
+    <div class="timer" id="timer">00:00</div>
+  </div>
+
+  <div class="game-area">
+    <button id="farmButton" class="button">Фарм</button>
+    <button id="exploreButton" class="button">Досліджувати</button>
+    <button id="exchangeButton" class="button">Обмін</button>
+    <button id="inventoryButton" class="button">Інвентар</button>
+    
+    <!-- Додаткові елементи інтерфейсу -->
+    <div id="worldInfo" class="info-box">
+      <h2>Поточний світ: <span id="worldName">Crypto Canyon</span></h2>
+      <p>Ресурси: <span id="worldResources">кристали, монети</span></p>
+      <p>Час до завершення: <span id="worldTimer">60 сек</span></p>
     </div>
 
-    <!-- Додано Telegram Web Apps API -->
-    <script>
-        // Отримати дані про користувача
-        const user = Telegram.WebApp.initDataUnsafe;
+    <div id="boostersInfo" class="info-box">
+      <h3>Бустери:</h3>
+      <ul id="boostersList"></ul>
+    </div>
+    
+    <div id="nftArtifacts" class="info-box">
+      <h3>Колекція NFT артефактів</h3>
+      <ul id="artifactList"></ul>
+    </div>
 
-        // Використовуйте дані користувача
-        console.log(user);
-        
-        // Змінити розмір вікна
-        Telegram.WebApp.expand();
-    </script>
+    <div id="leaderboard" class="info-box">
+      <h3>Рейтинг гравців</h3>
+      <ol id="leaderboardList"></ol>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <div class="bottom-bar">
+    <button class="button">Довідка</button>
+    <button class="button">Налаштування</button>
+  </div>
+
+  <script src="game.js"></script>
 </body>
 </html>
