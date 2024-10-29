@@ -13,7 +13,7 @@ function startFarming() {
         document.getElementById('farmButton').classList.add('hidden'); // Сховати кнопку Farm
         const claimButton = document.getElementById('claimButton');
         claimButton.classList.remove('hidden'); // Показати кнопку Claim
-        claimButton.style.backgroundColor = "grey"; // Встановити сіру кнопку Claim
+        claimButton.style.backgroundColor = "#38FF6A"; // Встановити сіру кнопку Claim
         startTimer(); // Запустити таймер
     }
 }
@@ -21,8 +21,8 @@ function startFarming() {
 // Функція для старту таймера
 function startTimer() {
     const timerElement = document.getElementById('timer');
-    timeLeft = 30; // Скинути таймер на 30 секунд
-    timerElement.textContent = "00:30"; // Встановити початкове значення таймера
+    timeLeft = 10; // Скинути таймер на 30 секунд
+    timerElement.textContent = "00:10"; // Встановити початкове значення таймера
     let interval = setInterval(() => {
         if (timeLeft > 0) {
             timeLeft--;
@@ -32,7 +32,7 @@ function startTimer() {
         } else {
             clearInterval(interval); // Зупинити таймер
             const claimButton = document.getElementById('claimButton');
-            claimButton.style.backgroundColor = "green"; // Змінити колір кнопки Claim на зелений
+            claimButton.style.backgroundColor = "38FF6A"; // Змінити колір кнопки Claim на зелений
             timerElement.textContent = "00:00"; // Скинути таймер
         }
     }, 1000);
@@ -42,7 +42,7 @@ function startTimer() {
 function claimReward() {
     if (timeLeft === 0 && farmingActive) {
         balance += 150; // Додаємо 150 монет до балансу
-        document.getElementById('balanceDisplay').textContent = `${balance} MAX`; // Оновити баланс
+        document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Оновити баланс
         document.getElementById('claimButton').classList.add('hidden'); // Сховати кнопку Claim
         document.getElementById('farmButton').classList.remove('hidden'); // Показати кнопку Farm знову
         farmingActive = false; // Скидаємо статус фармінгу
