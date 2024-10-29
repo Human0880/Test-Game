@@ -1,7 +1,7 @@
 // Змінні для трекінгу
 let balance = 100; // Стартовий баланс
 let farmingActive = false; // Статус фармінгу
-let timeLeft = 10; // Таймер на 30 секунд
+let timeLeft = 10; // Таймер на 10 секунд
 
 // Оновлення елементу балансу
 document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Відображення початкового балансу
@@ -21,7 +21,7 @@ function startFarming() {
 // Функція для старту таймера
 function startTimer() {
     const timerElement = document.getElementById('timer');
-    timeLeft = 10; // Скинути таймер на 30 секунд
+    timeLeft = 10; // Скинути таймер на 10 секунд
     timerElement.textContent = "00:10"; // Встановити початкове значення таймера
     let interval = setInterval(() => {
         if (timeLeft > 0) {
@@ -57,17 +57,19 @@ function showTab(tabName) {
     const logoImage = document.getElementById('logoImage');
     const worldsPanel = document.getElementById('worldsPanel');
     const timer = document.getElementById('timer');
+    const farmButton = document.getElementById('farmButton');
 
     if (tabName === 'Farm') {
-        tabTitle.textContent = "Farm";
-        tabTitle.classList.remove('hidden');
-        logoImage.classList.add('hidden'); // Сховати логотип
+        tabTitle.classList.add('hidden'); // Приховати заголовок
+        logoImage.classList.remove('hidden'); // Показати логотип
+        farmButton.classList.remove('hidden'); // Показати кнопку Farm
         timer.classList.remove('hidden'); // Показати таймер
     } else {
         tabTitle.textContent = tabName;
-        tabTitle.classList.remove('hidden');
-        logoImage.classList.add('hidden'); // Сховати логотип
-        timer.classList.add('hidden'); // Сховати таймер
+        tabTitle.classList.remove('hidden'); // Показати заголовок
+        logoImage.classList.add('hidden'); // Приховати логотип
+        timer.classList.add('hidden'); // Приховати таймер
+        farmButton.classList.add('hidden'); // Приховати кнопку Farm
     }
 
     // Показуємо або ховаємо панель вибору світу
