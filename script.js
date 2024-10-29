@@ -2,6 +2,8 @@
 let balance = 100; // Стартовий баланс
 let farmingActive = false; // Статус фармінгу
 let timeLeft = 10; // Таймер на 10 секунд
+let boostActive = false; // Статус активного бусту
+let originalReward = 150; // Оригінальна нагорода
 
 // Оновлення елементу балансу
 document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Відображення початкового балансу
@@ -41,13 +43,29 @@ function startTimer() {
 // Функція для отримання нагороди
 function claimReward() {
     if (timeLeft === 0 && farmingActive) {
-        balance += 150; // Додаємо 150 монет до балансу
+        let reward = originalReward;
+        if (boostActive) {
+            reward *= 2; // Подвоїти нагороду, якщо активний буст
+            boostActive = false; // Скинути статус бусту
+            alert("Boost activated! Your reward is doubled!"); // Сповіщення про активний буст
+        }
+        balance += reward; // Додаємо нагороду до балансу
         document.getElementById('balanceDisplay').textContent = `${balance} MX`; // Оновити баланс
         document.getElementById('claimButton').classList.add('hidden'); // Сховати кнопку Claim
         document.getElementById('farmButton').classList.remove('hidden'); // Показати кнопку Farm знову
         farmingActive = false; // Скидаємо статус фармінгу
     } else {
         alert("You cannot claim rewards yet!"); // Попередження, якщо не можна отримати нагороду
+    }
+}
+
+// Функція для активації бусту
+function activateBoost() {
+    if (!boostActive) {
+        boostActive = true; // Встановлюємо статус активного бусту
+        alert("Boost activated! You will earn double rewards for the next farming cycle!"); // Сповіщення про активацію бусту
+    } else {
+        alert("Boost is already active!"); // Попередження, якщо буст вже активний
     }
 }
 
@@ -58,18 +76,23 @@ function showTab(tabName) {
     const worldsPanel = document.getElementById('worldsPanel');
     const timer = document.getElementById('timer');
     const farmButton = document.getElementById('farmButton');
+    const claimButton = document.getElementById('claimButton');
+    const boostButton = document.getElementById('boostButton'); // Кнопка бусту
 
     if (tabName === 'Farm') {
         tabTitle.classList.add('hidden'); // Приховати заголовок
         logoImage.classList.remove('hidden'); // Показати логотип
         farmButton.classList.remove('hidden'); // Показати кнопку Farm
         timer.classList.remove('hidden'); // Показати таймер
+        boostButton.classList.remove('hidden'); // Показати кнопку Boost
     } else {
         tabTitle.textContent = tabName;
         tabTitle.classList.remove('hidden'); // Показати заголовок
         logoImage.classList.add('hidden'); // Приховати логотип
         timer.classList.add('hidden'); // Приховати таймер
         farmButton.classList.add('hidden'); // Приховати кнопку Farm
+        claimButton.classList.add('hidden'); // Приховати кнопку Claim
+        boostButton.classList.add('hidden'); // Приховати кнопку Boost
     }
 
     // Показуємо або ховаємо панель вибору світу
