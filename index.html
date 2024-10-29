@@ -53,6 +53,18 @@
         </div>
     </div>
 
+    <!-- Додано Telegram Web Apps API -->
+    <script>
+        // Отримати дані про користувача
+        const user = Telegram.WebApp.initDataUnsafe;
+
+        // Використовуйте дані користувача
+        console.log(user);
+        
+        // Змінити розмір вікна
+        Telegram.WebApp.expand();
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
